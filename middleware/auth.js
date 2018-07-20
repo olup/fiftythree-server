@@ -18,7 +18,7 @@ const verifyToken = (req, res, next) => {
         .send({ success: false, message: "Failed to authenticate token." });
 
     // if everything good, save to request for use in other routes
-    req.userEmail = decoded.email;
+    req.user = decoded;
     next();
   });
 };
